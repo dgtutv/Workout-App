@@ -8,8 +8,12 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
+import android.graphics.PorterDuff;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.MotionEvent;
+import android.view.View;
+import android.widget.Button;
 
 import com.google.android.material.navigation.NavigationView;
 
@@ -18,6 +22,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);         //standard stuff
 
@@ -37,6 +42,21 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
                     new HomeFragment()).commit();
             navigationView.setCheckedItem(R.id.nav_home);
+
+            Button workOutButton=findViewById(R.id.Workoutbutton);          //where all of my buttons get declared
+            Button timerButton=findViewById(R.id.Timerbutton);
+
+            workOutButton.setOnClickListener(new View.OnClickListener() {
+                public void onClick(View v) {
+
+                }                                                                       //where the button's functions come into play
+            });
+
+            timerButton.setOnClickListener(new View.OnClickListener() {
+                public void onClick(View v) {
+
+                }
+            });
         }
     }
 
