@@ -11,6 +11,9 @@ import android.widget.Button;
 import android.widget.PopupMenu;
 import android.widget.Toast;
 
+import java.lang.reflect.Field;
+import java.lang.reflect.Method;
+
 public class WorkoutsCreater extends AppCompatActivity implements PopupMenu.OnMenuItemClickListener {
 
     @Override
@@ -18,7 +21,7 @@ public class WorkoutsCreater extends AppCompatActivity implements PopupMenu.OnMe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_workouts_creater);
         ActionBar actionBar = getSupportActionBar();
-        //actionBar.setTitle("Workout Creater");                                      //change text at top of screen accordingly
+        actionBar.setTitle("Workout Creater");                                      //change text at top of screen accordingly
         Button btn=findViewById(R.id.BtnNew);
         btn.setOnClickListener(new View.OnClickListener(){
            @Override
@@ -27,7 +30,8 @@ public class WorkoutsCreater extends AppCompatActivity implements PopupMenu.OnMe
                v.setOnTouchListener(popup.getDragToOpenListener());
                popup.setOnMenuItemClickListener(WorkoutsCreater.this);
                popup.inflate(R.menu.workout_new_popup_menu);
-               popup.show();//show popup
+               setForceShowIcon(popup);
+               popup.show();                    //show popup
            }
         });
     }
@@ -47,6 +51,25 @@ public class WorkoutsCreater extends AppCompatActivity implements PopupMenu.OnMe
                 return true;
             default:
                 return false;
+        }
+    }
+    public static void setForceShowIcon(PopupMenu popupMenu) {                                      //function to show icons on popup menu
+        try {
+            Field[] fields = popupMenu.getClass().getDeclaredFields();
+            for (Field field : fields) {
+                if ("mPopup".equals(field.getName())) {
+                    field.setAccessible(true);
+                    Object menuPopupHelper = field.get(popupMenu);
+                    Class<?> classPopupHelper = Class.forName(menuPopupHelper
+                            .getClass().getName());
+                    Method setForceIcons = classPopupHelper.getMethod(
+                            "setForceShowIcon", boolean.class);
+                    setForceIcons.invoke(menuPopupHelper, true);
+                    break;
+                }
+            }
+        } catch (Throwable e) {
+            e.printStackTrace();
         }
     }
 }

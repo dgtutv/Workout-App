@@ -23,6 +23,20 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/NameWorkoutInput" />
 
+    <TextView
+        android:id="@+id/nameExercise1"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="20dp"
+        android:gravity="center"
+        android:text="Exercise 1:"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textSize="15dp"
+        app:layout_constraintBottom_toBottomOf="@id/spinnerExercise1"
+        app:layout_constraintEnd_toStartOf="@+id/NameWorkoutInput"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/spinnerExercise1" />
+
     <EditText
 
         android:id="@+id/NameWorkoutInput"
@@ -38,17 +52,39 @@
         app:layout_constraintStart_toEndOf="@+id/NameWorkoutTextView"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
+    <Button
         android:id="@+id/BtnNew"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="77dp"
+        android:layout_height="77dp"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="16dp"
+        android:background="@drawable/circle_plus"
         android:clickable="true"
+        android:focusable="true"
+        android:foreground="@drawable/ic_add_white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:srcCompat="@drawable/ic_add_white" />
 
+    <Button
+        android:id="@+id/BtnSave"
+        android:layout_width="77dp"
+        android:layout_height="77dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/rounded_corners"
+        android:foreground="@drawable/ic_save_white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Spinner
+        android:id="@+id/spinnerExercise1"
+        android:layout_width="175dp"
+        android:layout_height="43dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="40dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/NameWorkoutInput" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
