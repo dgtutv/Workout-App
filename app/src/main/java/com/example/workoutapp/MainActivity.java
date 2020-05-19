@@ -20,7 +20,7 @@ import com.google.android.material.navigation.NavigationView;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     private DrawerLayout drawer;
-
+    ActionBar actionBar=getSupportActionBar();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -43,6 +43,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
                     new HomeFragment()).commit();
             navigationView.setCheckedItem(R.id.nav_home);
+
+
 
         }
     }
@@ -84,4 +86,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         }
     }
 
+//    public void setActionBarTitle(String title){
+//        actionBar.setTitle(title);
+//    }
+
     }
+
