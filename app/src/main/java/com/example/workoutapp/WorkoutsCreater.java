@@ -18,15 +18,16 @@ public class WorkoutsCreater extends AppCompatActivity implements PopupMenu.OnMe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_workouts_creater);
         ActionBar actionBar = getSupportActionBar();
-        actionBar.setTitle("Workout Creater");                                      //change text at top of screen accordingly
+        //actionBar.setTitle("Workout Creater");                                      //change text at top of screen accordingly
         Button btn=findViewById(R.id.BtnNew);
         btn.setOnClickListener(new View.OnClickListener(){
            @Override
            public void onClick(View v){
                PopupMenu popup = new PopupMenu(WorkoutsCreater.this, v);                                    //display menu when button clicked
+               v.setOnTouchListener(popup.getDragToOpenListener());
                popup.setOnMenuItemClickListener(WorkoutsCreater.this);
                popup.inflate(R.menu.workout_new_popup_menu);
-               popup.showAtLocation(v, Gravity.TOP, 0, (int) v.getY());               //show popup above button
+               popup.show();//show popup
            }
         });
     }
