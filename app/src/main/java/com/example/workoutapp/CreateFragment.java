@@ -15,6 +15,7 @@ public class CreateFragment extends Fragment implements View.OnClickListener {
     public Button timersButton;
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        ((MainActivity)getActivity()).setActionBarTitle("Create");
         View view = inflater.inflate(R.layout.fragment_create, container, false);
         workoutButton=view.findViewById(R.id.Workoutbutton);
         workoutButton.setOnClickListener(this);

@@ -87,7 +87,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     }
 
     public void setActionBarTitle(String title){
-        ActionBar actionBar=getSupportActionBar();
+        ActionBar actionBar=getSupportActionBar();          //Sets the action Bar title
         actionBar.setTitle(title);
     }
 

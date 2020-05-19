@@ -16,6 +16,7 @@ public class WorkoutsFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        ((MainActivity)getActivity()).setActionBarTitle("Workouts");
         return inflater.inflate(R.layout.fragment_workouts, container, false);
     }
 }
