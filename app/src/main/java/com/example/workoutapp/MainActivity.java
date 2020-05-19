@@ -20,7 +20,7 @@ import com.google.android.material.navigation.NavigationView;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     private DrawerLayout drawer;
-    ActionBar actionBar=getSupportActionBar();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -86,9 +86,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         }
     }
 
-//    public void setActionBarTitle(String title){
-//        actionBar.setTitle(title);
-//    }
+    public void setActionBarTitle(String title){
+        ActionBar actionBar=getSupportActionBar();
+        actionBar.setTitle(title);
+    }
 
     }
 

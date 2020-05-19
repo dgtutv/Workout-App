@@ -12,7 +12,7 @@
         <activity
             android:name=".TimersCreater"
             android:label="@string/title_activity_timers_creater"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar"/>
         <activity
             android:name=".WorkoutsCreater"
             android:label="@string/title_activity_workouts_creater"
