@@ -9,6 +9,7 @@ import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.PorterDuff;
 import android.os.Bundle;
 import android.view.MenuItem;
@@ -20,9 +21,33 @@ import com.google.android.material.navigation.NavigationView;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     private DrawerLayout drawer;
+    public static String[] addX(int n, String[] arr, String x)
+    {
+        int i;
 
+        // create a new array of size n+1
+        String[] newarr = new String[n+1];
+
+        // insert the elements from
+        // the old array into the new array
+        // insert all elements till n
+        // then insert x at n+1
+        for (i = 0; i < n; i++)
+            newarr[i] = arr[i];
+
+        newarr[n] = x;
+
+        return newarr;
+    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+        String[] workoutArray= spinnerArray.workoutArray;
+        String value="1";
+        int length=workoutArray.length;
+        workoutArray= addX(length,workoutArray,"50");
+        System.out.println(workoutArray[0]);
+
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);         //standard stuff

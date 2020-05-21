@@ -7,8 +7,11 @@ import android.os.Bundle;
 import android.view.Gravity;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.PopupMenu;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import java.lang.reflect.Field;
@@ -18,6 +21,15 @@ public class WorkoutsCreater extends AppCompatActivity implements PopupMenu.OnMe
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+        String[] workoutArray= spinnerArray.workoutArray;
+        Spinner spinner = findViewById(R.id.spinnerExercise1);
+//        ArrayAdapter<String> adapter = ArrayAdapter.createFromResource(this,
+//                workoutArray, android.R.layout.simple_spinner_item);
+//        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+//        spinner.setAdapter(adapter);
+
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_workouts_creater);
         ActionBar actionBar = getSupportActionBar();
