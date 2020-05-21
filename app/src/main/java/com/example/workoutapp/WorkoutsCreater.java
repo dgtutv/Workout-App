@@ -18,8 +18,14 @@ import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 import java.util.List;
 
-public class WorkoutsCreater extends AppCompatActivity implements PopupMenu.OnMenuItemClickListener {
+public class WorkoutsCreater extends AppCompatActivity implements PopupMenu.OnMenuItemClickListener, AdapterView.OnItemSelectedListener {
 
+
+    public void ArrayToSpinner(List<String> array, Spinner spinner){
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(this,android.R.layout.simple_dropdown_item_1line,array);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinner.setAdapter(adapter);
+    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,11 +45,59 @@ public class WorkoutsCreater extends AppCompatActivity implements PopupMenu.OnMe
 
            }
         });
+
         List<String> workoutArray= spinnerArray.workoutArray;
-        Spinner spinner = findViewById(R.id.spinnerExercise1);
-        ArrayAdapter<String> adapter = new ArrayAdapter<>(WorkoutsCreater.this,android.R.layout.simple_dropdown_item_1line,workoutArray);
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinner.setAdapter(adapter);
+        Spinner spinner1 = findViewById(R.id.spinnerExercise1);
+        Spinner spinner2 = findViewById(R.id.spinnerExercise2);
+        Spinner spinner3 = findViewById(R.id.spinnerExercise3);
+        Spinner spinner4 = findViewById(R.id.spinnerExercise4);
+        Spinner spinner5 = findViewById(R.id.spinnerExercise5);
+        Spinner spinner6 = findViewById(R.id.spinnerExercise6);
+        Spinner spinner7 = findViewById(R.id.spinnerExercise7);
+        Spinner spinner8 = findViewById(R.id.spinnerExercise8);
+        Spinner spinner9 = findViewById(R.id.spinnerExercise9);
+        Spinner spinner10 = findViewById(R.id.spinnerExercise10);
+        Spinner spinner11 = findViewById(R.id.spinnerExercise11);
+        Spinner spinner12= findViewById(R.id.spinnerExercise12);
+        Spinner spinner13 = findViewById(R.id.spinnerExercise13);
+        Spinner spinner14 = findViewById(R.id.spinnerExercise14);
+        Spinner spinner15 = findViewById(R.id.spinnerExercise15);
+
+        ArrayToSpinner(workoutArray, spinner1);
+        ArrayToSpinner(workoutArray, spinner2);
+        ArrayToSpinner(workoutArray, spinner3);
+        ArrayToSpinner(workoutArray, spinner4);
+        ArrayToSpinner(workoutArray, spinner5);
+        ArrayToSpinner(workoutArray, spinner6);
+        ArrayToSpinner(workoutArray, spinner7);
+        ArrayToSpinner(workoutArray, spinner8);
+        ArrayToSpinner(workoutArray, spinner9);
+        ArrayToSpinner(workoutArray, spinner10);
+        ArrayToSpinner(workoutArray, spinner11);
+        ArrayToSpinner(workoutArray, spinner12);
+        ArrayToSpinner(workoutArray, spinner13);
+        ArrayToSpinner(workoutArray, spinner14);
+        ArrayToSpinner(workoutArray, spinner15);
+
+        spinner1.setOnItemSelectedListener(this);
+        spinner2.setOnItemSelectedListener(this);
+        spinner3.setOnItemSelectedListener(this);
+        spinner4.setOnItemSelectedListener(this);
+        spinner5.setOnItemSelectedListener(this);
+        spinner6.setOnItemSelectedListener(this);
+        spinner7.setOnItemSelectedListener(this);
+        spinner8.setOnItemSelectedListener(this);
+        spinner9.setOnItemSelectedListener(this);
+        spinner10.setOnItemSelectedListener(this);
+        spinner11.setOnItemSelectedListener(this);
+        spinner12.setOnItemSelectedListener(this);
+        spinner13.setOnItemSelectedListener(this);
+        spinner14.setOnItemSelectedListener(this);
+        spinner15.setOnItemSelectedListener(this);
+
+
+
+
     }
 
     @Override
@@ -81,5 +135,60 @@ public class WorkoutsCreater extends AppCompatActivity implements PopupMenu.OnMe
         } catch (Throwable e) {
             e.printStackTrace();
         }
+    }
+
+    @Override
+    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+        Spinner spinner=(Spinner) parent;
+        if(spinner.getId()==R.id.spinnerExercise1){
+            System.out.println(parent.getItemAtPosition(position));
+        }
+        else if(spinner.getId()==R.id.spinnerExercise2){
+
+        }
+        else if(spinner.getId()==R.id.spinnerExercise3){
+
+        }
+        else if(spinner.getId()==R.id.spinnerExercise4){
+
+        }
+        else if(spinner.getId()==R.id.spinnerExercise5){
+
+        }
+        else if(spinner.getId()==R.id.spinnerExercise6){
+
+        }
+        else if(spinner.getId()==R.id.spinnerExercise7){
+
+        }
+        else if(spinner.getId()==R.id.spinnerExercise8){
+
+        }
+        else if(spinner.getId()==R.id.spinnerExercise9){
+
+        }
+        else if(spinner.getId()==R.id.spinnerExercise10){
+
+        }
+        else if(spinner.getId()==R.id.spinnerExercise11){
+
+        }
+        else if(spinner.getId()==R.id.spinnerExercise12){
+
+        }
+        else if(spinner.getId()==R.id.spinnerExercise13){
+
+        }
+        else if(spinner.getId()==R.id.spinnerExercise14){
+
+        }
+        else if(spinner.getId()==R.id.spinnerExercise15){
+
+        }
+    }
+
+    @Override
+    public void onNothingSelected(AdapterView<?> parent) {
+
     }
 }

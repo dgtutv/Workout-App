@@ -345,6 +345,50 @@
                 android:layout_marginEnd="40dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/NameWorkoutInput" />
+            <TextView
+                android:id="@+id/nameExercise14"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginStart="20dp"
+                android:gravity="center"
+                android:text="Exercise:"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                android:textSize="15sp"
+                app:layout_constraintBottom_toBottomOf="@id/spinnerExercise14"
+                app:layout_constraintEnd_toStartOf="@+id/NameWorkoutInput"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/spinnerExercise14" />
+
+            <Spinner
+                android:id="@+id/spinnerExercise14"
+                android:layout_width="175dp"
+                android:layout_height="43dp"
+                android:layout_marginTop="700dp"
+                android:layout_marginEnd="40dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/NameWorkoutInput" />
+            <TextView
+                android:id="@+id/nameExercise15"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginStart="20dp"
+                android:gravity="center"
+                android:text="Exercise:"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                android:textSize="15sp"
+                app:layout_constraintBottom_toBottomOf="@id/spinnerExercise15"
+                app:layout_constraintEnd_toStartOf="@+id/NameWorkoutInput"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/spinnerExercise15" />
+
+            <Spinner
+                android:id="@+id/spinnerExercise15"
+                android:layout_width="175dp"
+                android:layout_height="43dp"
+                android:layout_marginTop="750dp"
+                android:layout_marginEnd="40dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/NameWorkoutInput" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.core.widget.NestedScrollView>
