@@ -1,5 +1,8 @@
 package com.example.workoutapp;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class spinnerArray {
-    public static String[] workoutArray={};
+    public static List<String> workoutArray=new ArrayList<>();
 }

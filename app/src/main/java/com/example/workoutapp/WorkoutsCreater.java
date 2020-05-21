@@ -16,20 +16,12 @@ import android.widget.Toast;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
+import java.util.List;
 
 public class WorkoutsCreater extends AppCompatActivity implements PopupMenu.OnMenuItemClickListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
-        String[] workoutArray= spinnerArray.workoutArray;
-        Spinner spinner = findViewById(R.id.spinnerExercise1);
-//        ArrayAdapter<String> adapter = ArrayAdapter.createFromResource(this,
-//                workoutArray, android.R.layout.simple_spinner_item);
-//        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-//        spinner.setAdapter(adapter);
-
-
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_workouts_creater);
         ActionBar actionBar = getSupportActionBar();
@@ -44,8 +36,14 @@ public class WorkoutsCreater extends AppCompatActivity implements PopupMenu.OnMe
                popup.inflate(R.menu.workout_new_popup_menu);
                setForceShowIcon(popup);
                popup.show();                    //show popup
+
            }
         });
+        List<String> workoutArray= spinnerArray.workoutArray;
+        Spinner spinner = findViewById(R.id.spinnerExercise1);
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(WorkoutsCreater.this,android.R.layout.simple_dropdown_item_1line,workoutArray);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinner.setAdapter(adapter);
     }
 
     @Override

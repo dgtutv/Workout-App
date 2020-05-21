@@ -19,6 +19,8 @@ import android.widget.Button;
 
 import com.google.android.material.navigation.NavigationView;
 
+import java.util.List;
+
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     private DrawerLayout drawer;
     public static String[] addX(int n, String[] arr, String x)
@@ -42,11 +44,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
-        String[] workoutArray= spinnerArray.workoutArray;
+        List<String> workoutArray= spinnerArray.workoutArray;
         String value="1";
-        int length=workoutArray.length;
-        workoutArray= addX(length,workoutArray,"50");
-        System.out.println(workoutArray[0]);
+        workoutArray.add("50");
 
 
         super.onCreate(savedInstanceState);
